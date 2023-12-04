@@ -11,5 +11,10 @@ public class Main {
         bst.insert(56);
         bst.insert(30);
         bst.insert(70);
+
+        // UC2: Check if all are added
+        System.out.println("Total nodes in BST: " + bst.size());
+
+
     }
 }

@@ -40,4 +40,12 @@ class BinarySearchTree<T extends Comparable<T>> {
             inOrderPrintRec(root.right);
         }
     }
+
+    int size() {
+        return sizeRec(root);
+    }
+
+    private int sizeRec(TreeNode<T> node) {
+        return node == null ? 0 : 1 + sizeRec(node.left) + sizeRec(node.right);
+    }
 }
