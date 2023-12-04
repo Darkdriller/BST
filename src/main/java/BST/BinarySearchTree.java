@@ -48,4 +48,22 @@ class BinarySearchTree<T extends Comparable<T>> {
     private int sizeRec(TreeNode<T> node) {
         return node == null ? 0 : 1 + sizeRec(node.left) + sizeRec(node.right);
     }
+
+    boolean search(T key) {
+        return searchRec(root, key);
+    }
+
+    private boolean searchRec(TreeNode<T> root, T key) {
+        if (root == null) {
+            return false;
+        }
+
+        if (key.equals(root.key)) {
+            return true;
+        }
+
+        return key.compareTo(root.key) < 0
+                ? searchRec(root.left, key)
+                : searchRec(root.right, key);
+    }
 }
